@@ -11,7 +11,6 @@ use App\Entity\WebsiteInfos;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as faker;
-use Carbon\Carbon;
 use Faker\Provider\Image;
 
 class AppFixtures extends Fixture
@@ -26,7 +25,7 @@ class AppFixtures extends Fixture
 
             $user->setName($faker->name);
             $user->setEmail($faker->unique()->safeEmail);
-            $user->setEmailVerifiedAt(Carbon::now());
+            $user->setEmailVerifiedAt(new \DateTime());
             $user->setPassword('$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');// password
             $user->setRememberToken('');
 
