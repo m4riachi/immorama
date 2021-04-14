@@ -51,7 +51,7 @@ class AnnonceDetails
     private $updatedAt;
 
     /**
-     * @var \Annonces
+     * @var Annonces
      *
      * @ORM\ManyToOne(targetEntity="Annonces")
      * @ORM\JoinColumns({
@@ -141,17 +141,17 @@ class AnnonceDetails
     }
 
     /**
-     * @return \Annonces
+     * @return Annonces
      */
-    public function getAnnonce(): \Annonces
+    public function getAnnonce(): Annonces
     {
         return $this->annonce;
     }
 
     /**
-     * @param \Annonces $annonce
+     * @param Annonces $annonce
      */
-    public function setAnnonce(\Annonces $annonce): void
+    public function setAnnonce(Annonces $annonce): void
     {
         $this->annonce = $annonce;
     }

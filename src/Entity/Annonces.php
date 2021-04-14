@@ -233,17 +233,17 @@ class Annonces
     }
 
     /**
-     * @return \Agents
+     * @return Agents
      */
-    public function getAgent(): \Agents
+    public function getAgent(): Agents
     {
         return $this->agent;
     }
 
     /**
-     * @param \Agents $agent
+     * @param Agents $agent
      */
-    public function setAgent(\Agents $agent): void
+    public function setAgent(Agents $agent): void
     {
         $this->agent = $agent;
     }

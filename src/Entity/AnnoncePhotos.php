@@ -118,17 +118,17 @@ class AnnoncePhotos
     }
 
     /**
-     * @return \Annonces
+     * @return Annonces
      */
-    public function getAnnonce(): \Annonces
+    public function getAnnonce(): Annonces
     {
         return $this->annonce;
     }
 
     /**
-     * @param \Annonces $annonce
+     * @param Annonces $annonce
      */
-    public function setAnnonce(\Annonces $annonce): void
+    public function setAnnonce(Annonces $annonce): void
     {
         $this->annonce = $annonce;
     }

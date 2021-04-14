@@ -180,17 +180,17 @@ class WebsiteInfos
     }
 
     /**
-     * @return json
+     * @return string
      */
-    public function getMap(): json
+    public function getMap(): string
     {
         return $this->map;
     }
 
     /**
-     * @param json $map
+     * @param string $map
      */
-    public function setMap(json $map): void
+    public function setMap(string $map): void
     {
         $this->map = $map;
     }
