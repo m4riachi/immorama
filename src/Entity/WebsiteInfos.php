@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="website_infos")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
 class WebsiteInfos
 {
@@ -98,5 +99,212 @@ class WebsiteInfos
      */
     private $updatedAt;
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogo(): string
+    {
+        return $this->logo;
+    }
+
+    /**
+     * @param string $logo
+     */
+    public function setLogo(string $logo): void
+    {
+        $this->logo = $logo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress(): string
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param string $address
+     */
+    public function setAddress(string $address): void
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity(): string
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity(string $city): void
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * @return json
+     */
+    public function getMap(): json
+    {
+        return $this->map;
+    }
+
+    /**
+     * @param json $map
+     */
+    public function setMap(json $map): void
+    {
+        $this->map = $map;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFacebookUrl(): string
+    {
+        return $this->facebookUrl;
+    }
+
+    /**
+     * @param string $facebookUrl
+     */
+    public function setFacebookUrl(string $facebookUrl): void
+    {
+        $this->facebookUrl = $facebookUrl;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInstagramUrl(): string
+    {
+        return $this->instagramUrl;
+    }
+
+    /**
+     * @param string $instagramUrl
+     */
+    public function setInstagramUrl(string $instagramUrl): void
+    {
+        $this->instagramUrl = $instagramUrl;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLinkedinUrl(): string
+    {
+        return $this->linkedinUrl;
+    }
+
+    /**
+     * @param string $linkedinUrl
+     */
+    public function setLinkedinUrl(string $linkedinUrl): void
+    {
+        $this->linkedinUrl = $linkedinUrl;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAnalyticsTag(): string
+    {
+        return $this->analyticsTag;
+    }
+
+    /**
+     * @param string $analyticsTag
+     */
+    public function setAnalyticsTag(string $analyticsTag): void
+    {
+        $this->analyticsTag = $analyticsTag;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getCreatedAt(): ?\DateTime
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime|null $createdAt
+     */
+    public function setCreatedAt(?\DateTime $createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt(): ?\DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime|null $updatedAt
+     */
+    public function setUpdatedAt(?\DateTime $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new \DateTime();
+        $this->updatedAt = new \DateTime();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedAtValue()
+    {
+        $this->updatedAt = new \DateTime();
+    }
 }
